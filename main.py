@@ -21,7 +21,8 @@ def main():
     while not aaa.isnumeric():
         aaa=input("Введіть ціле числове значення AAA: ") # Користувач вводить певне значення AAA.
     aaa=int(aaa)
-    check_and_print(dataBase,aaa)
+    dataBase=check_database(dataBase,aaa)
+    print_database(dataBase)
 
 def read():
     file=open(path, "r")
@@ -36,10 +37,16 @@ def convert(text):
         dataBase.append(dataStamp)
     return dataBase
 
-def check_and_print(dataBase,aaa):
-    for data in dataBase:        #Програма виводить всі значення часу,
+def check_database(dataBase,aaa):
+    dataBase_new=[]
+    for data in dataBase:       
         if data.resault>aaa:     #при яких результати вимірювання XXX перевищює введене користувачем значення AAA.
-            print(data.time) 
+            dataBase_new.append(data.time)
+    return dataBase_new
+
+def print_database(dataBase):
+    for data in dataBase:        #Програма виводить всі значення часу
+        print(data)  
 
 if __name__ == '__main__':
     main()
