@@ -9,9 +9,9 @@ def main():
     layout = [  [sg.Listbox("",size=(40,10),key="-Listbox-")],
                 [sg.Text('Введіть ціле числове значення AAA: ')],
                 [sg.Input(key='-INPUT-',size=(40,1),)],
-                [sg.Button('Ok'), sg.Button('Cancel')] ]
+                [sg.Button('Перевірити'), sg.Button('Закрити')] ]
 
-    window = sg.Window('Window Title', layout)
+    window = sg.Window('Графічний інтерфейс', layout)
 
     while True:
         event, values = window.read()
