@@ -17,7 +17,10 @@ path = "input.txt"
 def main():
     text=read()
     dataBase=convert(text)
-    aaa=float(input("Введіть числове значення AAA: ")) # Користувач вводить певне значення AAA.
+    aaa="not Numeric"
+    while not aaa.isnumeric():
+        aaa=input("Введіть ціле числове значення AAA: ") # Користувач вводить певне значення AAA.
+    aaa=int(aaa)
     check_and_print(dataBase,aaa)
 
 def read():
@@ -29,7 +32,7 @@ def convert(text):
     dataBase=[]
     for line in text:
         splited = str.split(line," ")
-        dataStamp=TimeStamp(splited[0],float(splited[1]))
+        dataStamp=TimeStamp(splited[0],int(splited[1]))
         dataBase.append(dataStamp)
     return dataBase
 
